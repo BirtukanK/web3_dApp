@@ -25,5 +25,6 @@ After that by cloning the repo one can use the project using their own Algorand 
 
 Birtukan Kuma
 Email: birtukankuma1113@gmail.com
+
 project link: https://github.com/BirtukanK/web3_dApp
 
