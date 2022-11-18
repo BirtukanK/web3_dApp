@@ -3,27 +3,36 @@ import './App.css';
 import algosdk from 'algosdk'
 
 
-
-const token = 'Your algod API token';
-const server = 'http://127.0.0.1';
-const port = 3000;
-const client = new algosdk.Algodv2(token, server, port);
-
-(async () => {
-  console.log(await client.status().do());
-})().catch((e) => {
-  console.log(e);
-});
-
-
+// export default ConnectAlgoSigner
 
 function App() {
+
+  const token = 'Your algod API token';
+  const server = 'http://127.0.0.1';
+  const port = 3000;
+  const client = new algosdk.Algodv2(token, server, port);
+  
+  const ConnectAlgoSigner = ({userAccount}) =>{
+  
+    const connectAlgoSigner = async () => {
+      let resp = await ConnectAlgoSigner.connect()
+      console.log(resp)
+      getUserAccount()
+    }
+  
+    const getUserAccount = async () =>{
+      userAccount.current = await ConnectAlgoSigner.accounts({
+        ledger: 'TestNet'
+      })
+      console.log(userAccount.current)
+    }
+  }
   return (   
     <div id="bg">
       
      <form>
      <div class= "form-field">
-        <button class="btn"  type="submit">Connecting to Algod wallet</button>
+        <button class="btn"  type="submit" onClick={connectAlgoSigner}>Connecting to Algod wallet</button>
       </div>
      <p>Public Address</p>
       <div class= "form-field">
