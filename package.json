@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "algosdk": "^1.21.0"
+    "algosdk": "^1.21.0",
+    "create-app-react": "^1.0.6"
   }
 }
